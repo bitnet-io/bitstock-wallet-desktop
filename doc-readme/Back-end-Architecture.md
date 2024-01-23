@@ -1,0 +1,26 @@
+# Visual Architecture
+
+<a href="https://ibb.co/MRFPS6s"><img src="https://i.ibb.co/nDxQmCb/Back-end-Architecture.png" alt="Back-end-Architecture" border="0"></a>
+
+# Code Architecture
+
+The application is composed of different modules for the source code, each module is distributed in its own folder.
+
+Below is the matrix of the different modules and the associated documentation:
+
+| Module Name | Descriptions                                                                                                                       | Authors  | Contributors | Location                |
+|-------------|------------------------------------------------------------------------------------------------------------------------------------|----------|--------------|-------------------------|
+| 📤 [API](Module-API)         | Contains all the functions necessary to interact with the different APIs supported by atomicdex-desktop (mm2, coinpaprika, etc...) | [Milerius](https://github.com/Milerius) |              | src/atomicdex/api       |
+| 📝 [Config](Module-Config)      | Contains all the functions necessary to handle different configs (mm2, coins, wallets...)                                                                                                                                    | [Milerius](https://github.com/Milerius) |              | src/atomicdex/config    |
+| 📏 [Constants](Module-Constants)   |  Contains the constant values ​​of the code (error code, enums, http code...)                                                                                                                                  | [Milerius](https://github.com/Milerius) |              | src/atomicdex/constants |
+| 🗂️ [Data](Module-Data)        | Contains the data structure used in differents [models](API-Models).                                                                                                                                   | [Milerius](https://github.com/Milerius) |              | src/atomicdex/data      |
+| 🗓️ [Events](Module-Events)      | Contains the events that can be received or sent through the application                                                                                                                                   | [Milerius](https://github.com/Milerius) |              | src/atomicdex/events    |
+| 💼 [Managers](Module-Managers)    | Contains the managers of the application (notifications, wallet) will be merged with the [services](API-Services)                                                                                                                                   | [Milerius](https://github.com/Milerius) |              | src/atomicdex/managers  |
+| 🎨 [Models](Module-Models)      | Contains all QT models (connects the 3rd and 1st layer)                                                                                                                                   | [Milerius](https://github.com/Milerius) |              | src/atomicdex/models    |
+| 📄 [Pages](Module-Pages)       |  Represents a page of QT, wrapper around several models                                                                                                                                  | [Milerius](https://github.com/Milerius) |              | src/atomicdex/pages     |
+| 🖥️ [Platform](Module-Platform)    |  Contains platform dependend code                                                                                                                                  | [Milerius](https://github.com/Milerius) |              | src/atomicdex/platform  |
+| 🌐 [Services](Module-Services)    |  Contains all the services of the 2nd and 3rd layer                                                                                                                                  | [Milerius](https://github.com/Milerius) |              | src/atomicdex/services  |
+| 🧪 [Tests](Module-Tests)       | Contains all the unit tests of the project                                                                                                                                    | [Milerius](https://github.com/Milerius) |              | src/atomicdex/tests     |
+| 🧰  [Utilities](Module-Utilities)   | Contains all the utility functions of the project                                                                                                                                    | [Milerius](https://github.com/Milerius) |              | src/atomicdex/utilities |
+| :atom: [Version](Module-Version)     | Contains version functions                                                                                                                                    | [Milerius](https://github.com/Milerius) |              | src/atomicdex/version   |
+| 🛠️ [Widgets](Module-Widgets)     | Contains custom widgets of the application                                                                                                                                    | [Milerius](https://github.com/Milerius) |              | src/atomicdex/widgets   |
