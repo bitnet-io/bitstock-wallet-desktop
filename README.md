@@ -1,0 +1,1 @@
+# bitstock-wallet-desktop
