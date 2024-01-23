@@ -72,6 +72,7 @@ feedback.
 
 # Building Bitstock for Linux + macOS + Windows
 
+* https://github.com/bitnet-io/bitstock-wallet-desktop/blob/main/doc-readme/Build-Instructions.md
 
  # Building Bitstock  Desktop on Linux (Feodra or Ubuntu)
 
