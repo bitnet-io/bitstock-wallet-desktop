@@ -1,0 +1,12 @@
+prefix=${pcfiledir}/../..
+exec_prefix=${prefix}
+libdir=${prefix}/lib
+includedir=${prefix}/../include
+
+Name: sodium
+Version: 1.0.18
+Description: A modern and easy-to-use crypto library
+
+
+Libs: "-L${libdir}" -lsodium
+Cflags: "-I${includedir}"

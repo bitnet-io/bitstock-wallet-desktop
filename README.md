@@ -70,6 +70,193 @@ Please join our [Discord Server](https://komodoplatform.com/discord) for support
 feedback.
 
 
+# Building Bitstock for Linux + macOS + Windows
+
+* https://github.com/bitnet-io/bitstock-wallet-desktop/blob/main/doc-readme/Build-Instructions.md
+
+# Building Bitstock  Desktop on Linux (Feodra or Ubuntu)
+
+
+### Prerequisites
+
+- Clang C++ 17 compiler (clang-12 minimum)
+- [CMake](https://cmake.org/install/) 3.18 minimum
+
+
+### Clone Bitstock  repository (with submodules)
+
+`git clone --recurse-submodules https://github.com/bitnet-io/bitstock-desktop-wallet.git`
+
+
+### Install Qt
+
+```bash
+# Could also be pip3 depending of your python installation
+python3 -m pip install --upgrade pip
+pip install aqtinstall==3.1.1
+python3 -m aqt install-qt linux desktop 5.15.2 -O $HOME/Qt -b https://qt-mirror.dannhauer.de/ -m qtcharts debug_info qtwebengine
+```
+
+Add the following environment variables to your `~/.bashrc` or `~/.zshrc` profiles:
+ * `QT_INSTALL_CMAKE_PATH` equal to the CMake QT path
+ * `QT_ROOT` equal to the QT root installation folder
+
+e.g.:
+```bash
+export QT_INSTALL_CMAKE_PATH=~/Qt/5.15.2/gcc_64/lib/cmake
+export QT_ROOT=~/Qt/5.15.2
+```
+
+Make sure Qt binaries are on the PATH. E.g.
+
+```bash
+export PATH=$PATH:/home/username/Qt/version/arch/bin
+```
+
+### Install Linux dependencies (aptitude)
+
+```bash
+sudo apt-get install build-essential \
+                    libgl1-mesa-dev \
+                    ninja-build \
+                    curl \
+                    wget \
+                    zstd \
+                    software-properties-common \
+                    lsb-release \
+                    libpulse-dev \
+                    libtool \
+                    autoconf \
+                    unzip \
+                    libssl-dev \
+                    libxkbcommon-x11-0 \
+                    libxcb-icccm4 \
+                    libxcb-image0 \
+                    libxcb1-dev \
+                    libxcb-keysyms1-dev \
+                    libxcb-render-util0-dev \
+                    libxcb-xinerama0 \
+                    libgstreamer-plugins-base1.0-dev \
+                    git -y
+
+# get llvm
+wget https://apt.llvm.org/llvm.sh
+chmod +x llvm.sh
+sudo ./llvm.sh 12
+
+# set clang version
+sudo update-alternatives --install /usr/bin/clang++ clang++ /usr/bin/clang++-12 777
+sudo update-alternatives --install /usr/bin/clang clang /usr/bin/clang-12 777
+sudo apt-get update
+# if you want to use libclang
+#sudo apt-get install libc++abi-12-dev libc++-12-dev -y
+
+# Add the following environment variables to your `~/.bashrc` or `~/.zshrc` profiles:
+
+#if you want to use libclang
+#export CXXFLAGS=-stdlib=libc++
+#export LDFLAGS=-stdlib=libc++
+export CXX=clang++-12
+export CC=clang-12
+```
+
+### Install Linux dependencies (rpm)
+
+```bash
+sudo dnf update
+sudo dnf groupinstall "Development Tools" "Development Libraries"
+sudo dnf install  wget \
+                  curl \
+                  cmake \
+                  perl \
+                  calng12-devel \
+                  ninja-build \
+                  zstd \
+                  mesa-libGL-devel \
+                  redhat-lsb-core \
+                  libtool \
+                  autoconf \
+                  zip \
+                  unzip \
+                  openssl \
+                  openssl-devel \
+                  libxkbcommon-x11 \
+                  libxcb-* \
+                  gstreamer1-plugins-base-devel perl-FindBin perl perl-IPC-Cmd
+
+
+# Fresh versions of RedHat (9+) and Fedora (34+) come with clang15 and llvm15, no extra packages or configuration is required
+```
+
+
+### Install Libwally
+
+```bash
+
+git clone https://github.com/KomodoPlatform/libwally-core.git
+cd libwally-core
+
+# Initialise the libsecp sources (Needs to be run only once)
+ git submodule init
+ git submodule sync --recursive
+ git submodule update --init --recursive
+
+# Build
+./tools/autogen.sh
+./tools/autogen.sh
+./configure --disable-shared  # configure requires access to python binary on the PATH
+# either pass PYTHON_VERSION=3.X to the build command or link your python3.X installation to /usr/bin/python
+sudo make -j2 install
+```
+
+
+### Bootstrap VCPKG modules
+
+Install vcpkg from within the `ci_tools_atomic_dex` folder:
+
+```bash
+cd ci_tools_atomic_dex/vcpkg-repo
+./bootstrap-vcpkg.sh
+./vcpkg install
+```
+
+
+### Build BitStock-Desktop (portable)
+
+In your shell command prompt (Powershell/Zsh/Bash), from within the `root` folder (e.g. ~/BitStock-Desktop), type:
+
+```bash
+mkdir build
+cd build              # create the 'build' folder if it doesn't exist
+cmake -DCMAKE_BUILD_TYPE=Release ../    # add -GNinja if you want to use the ninja build system.
+cmake --build . --config Release --target bitstock-wallet
+
+```
+
+
+### Bundle BitStock-Desktop (installer)
+
+
+```
+mkdir build
+cd build              # create the 'build' folder if it doesn't exist
+cmake -DCMAKE_BUILD_TYPE=Release -GNinja ../
+cmake --build . --config Release --target bitstock-wallet
+ninja install
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
 ## Useful links
 
 - :book: [Komodo Wallet Documentation](https://developers.komodoplatform.com/basic-docs/atomicdex/atomicdex-tutorials/introduction-to-atomicdex.html)
@@ -102,54 +289,7 @@ Check out Komodo Wallet mobile, available for [Android and iOS](https://atomicde
 | qt            | 5.15.2     | Qt is a cross-platform application development framework for desktop, embedded and mobile.                                                      | GUI                 |
 
 
-## Contributors / Thanks
 
-<div align="center">
-	<table>
-	  <tr>
-	    <td align="center">
-	        <a href="https://github.com/Milerius"><img src="https://avatars1.githubusercontent.com/u/21139416?s=400&u=12e0a99353ae95365801542b85e2fd69abd44a81&v=4" width="100px;" alt="Milerius"/><br /><sub><b>Milerius</b></sub></a><br /><a href="https://github.com/KomodoPlatform/komodo-wallet-desktop/commits?author=Milerius" title="Lead Back-End Dev / Code">✍️💻</a>
-	    </td>
-		<td align="center">
-		    <a href="https://github.com/SylEze"><img src="https://avatars1.githubusercontent.com/u/14373103?s=460&u=b303a2d2261008814800c2d7809efc6af685a460&v=4"width="100px;" alt="syl"/><br /><sub><b>syl</b></sub></a><br /><a href="https://github.com/KomodoPlatform/komodo-wallet-desktop/commits?author=SylEze" title="Frontend and Back-End Dev / Code">✍️💻</a>
-		</td>
-	    <td align="center">
-	        <a href="https://github.com/naezith"><img src="https://avatars2.githubusercontent.com/u/6732486?s=400&u=5d242e560be002ad4af597dd284eb3242ab28016&v=4" width="100px;" alt="naezith"/><br /><sub><b>naezith</b></sub></a><br /><a href="https://github.com/KomodoPlatform/komodo-wallet-desktop/commits?author=naezith" title="Front-End Dev / Code">✍️💻</a>
-	    </td>
-	    <td align="center">
-	        <a href="https://github.com/ssakone"><img src="https://avatars.githubusercontent.com/u/39985611?v=4" width="100px;" alt="ssakone"/><br /><sub><b>ssakone</b></sub></a><br /><a href="https://github.com/KomodoPlatform/komodo-wallet-desktop/commits?author=ssakone" title="Front-End Dev / Code">✍️💻</a>
-	    </td>
-	  </tr>
-	  <tr>
-	    <td align="center">
-	        <a href="https://github.com/tonymorony"><img src="https://avatars3.githubusercontent.com/u/24797699?s=400&u=335984bcb93856f260ac6d139b18f0c596306e08&v=4" width="100px;" alt="Anton TonyL Lysakov"/><br /><sub><b>Anton "TonyL" Lysakov</b></sub></a><br /><a href="https://github.com/KomodoPlatform/komodo-wallet-desktop/commits?author=tonymorony" title="Lead QA / CI">🛠💻</a>
-	    </td>
-	    <td align="center">
-	        <a href="https://github.com/ca333"><img src="https://avatars3.githubusercontent.com/u/10762374?s=60&v=4" width="100px;" alt="ca333"/><br /><sub><b>ca333</b></sub></a><br /><a href="https://github.com/KomodoPlatform/komodo-wallet-desktop/commits?author=ca333" title="Chief Technology Officer">:penguin: :guardsman:</a>
-	    </td>
-	    <td align="center">
-	        <a href="https://github.com/smk762"><img src="https://i.imgur.com/gAD7BxX.jpg" width="100px;" alt="smk762"/><br /><sub><b>smk762</b></sub></a><br /><a href="https://github.com/KomodoPlatform/komodo-wallet-desktop/commits?author=smk762" title="QA Engineer">🛠:wolf:</a>
-	    </td>
-	    <td align="center">
-	        <a href="https://github.com/cipig"><img src="https://avatars0.githubusercontent.com/u/32116761?s=60&v=4" width="100px;" alt="cipig"/><br /><sub><b>cipig</b></sub></a><br /><a href="https://github.com/KomodoPlatform/komodo-wallet-desktop/commits?author=cipig" title="System Administrator">✍️💻</a>
-	    </td>
-	  </tr>
-	  <tr>
-	    <td align="center">
-	        <a href="https://github.com/SirSevenG"><img src="https://avatars1.githubusercontent.com/u/44422309?s=60&v=4" width="100px;" alt="SirSevenG"/><br /><sub><b>SirSevenG</b></sub></a><br /><a href="https://github.com/KomodoPlatform/komodo-wallet-desktop/commits?author=SirSevenG" title="QA Engineer">🛠💻</a>
-	    </td>
-	    <td align="center">
-	        <a href="https://github.com/dathbezumniy"><img src="https://avatars2.githubusercontent.com/u/11756768?s=60&v=4" width="100px;" alt="dathbezumniy"/><br /><sub><b>dathbezumniy</b></sub></a><br /><a href="https://github.com/KomodoPlatform/komodo-wallet-desktop/commits?author=dathbezumniy" title="Junior QA Engineer">🛠💻</a>
-	    </td>
-	    <td align="center">
-	        <a href="https://github.com/BloodyNora"><img src="https://avatars2.githubusercontent.com/u/4005813?s=60&v=4" width="100px;" alt="BloodyNora"/><br /><sub><b>BloodyNora</b></sub></a><br /><a href="https://github.com/KomodoPlatform/komodo-wallet-desktop/commits?author=BloodyNora" title="IT allrounder">🛠💻</a>
-	    </td>
-	    <td align="center">
-	        <a href="https://github.com/zatJUM"><img src="https://avatars3.githubusercontent.com/u/45312760?s=60&v=4" width="100px;" alt="zatJUM"/><br /><sub><b>zatJUM</b></sub></a><br /><a href="https://github.com/KomodoPlatform/komodo-wallet-desktop/commits?author=zatJUM" title="Community Dev">:heart:💻</a>
-	    </td>
-	  </tr>
-	</table>
-</div>
 
 
 ## License

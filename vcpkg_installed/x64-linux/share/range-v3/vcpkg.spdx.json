@@ -1,0 +1,104 @@
+{
+  "$schema": "https://raw.githubusercontent.com/spdx/spdx-spec/v2.2.1/schemas/spdx-schema.json",
+  "spdxVersion": "SPDX-2.2",
+  "dataLicense": "CC0-1.0",
+  "SPDXID": "SPDXRef-DOCUMENT",
+  "documentNamespace": "https://spdx.org/spdxdocs/range-v3-x64-linux-0.12.0#1-5d79c2f2-c434-4c7d-b3ad-c6fb9e2bcb00",
+  "name": "range-v3:x64-linux@0.12.0#1 8402d67035cbfff9d40942c6c6fe616907119b099eea7b62f40bd803cadff459",
+  "creationInfo": {
+    "creators": [
+      "Tool: vcpkg-4c1df40a3c5c5e18de299a99e9accb03c2a82e1e"
+    ],
+    "created": "2024-01-21T21:37:54Z"
+  },
+  "relationships": [
+    {
+      "spdxElementId": "SPDXRef-port",
+      "relationshipType": "GENERATES",
+      "relatedSpdxElement": "SPDXRef-binary"
+    },
+    {
+      "spdxElementId": "SPDXRef-port",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-file-0"
+    },
+    {
+      "spdxElementId": "SPDXRef-port",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-file-1"
+    },
+    {
+      "spdxElementId": "SPDXRef-binary",
+      "relationshipType": "GENERATED_FROM",
+      "relatedSpdxElement": "SPDXRef-port"
+    },
+    {
+      "spdxElementId": "SPDXRef-file-0",
+      "relationshipType": "CONTAINED_BY",
+      "relatedSpdxElement": "SPDXRef-port"
+    },
+    {
+      "spdxElementId": "SPDXRef-file-1",
+      "relationshipType": "CONTAINED_BY",
+      "relatedSpdxElement": "SPDXRef-port"
+    }
+  ],
+  "packages": [
+    {
+      "name": "range-v3",
+      "SPDXID": "SPDXRef-port",
+      "versionInfo": "0.12.0#1",
+      "downloadLocation": "NOASSERTION",
+      "homepage": "https://github.com/ericniebler/range-v3",
+      "licenseConcluded": "BSL-1.0 AND MIT AND (NCSA OR MIT)",
+      "licenseDeclared": "NOASSERTION",
+      "copyrightText": "NOASSERTION",
+      "description": "Range library for C++11/14/17/20.",
+      "comment": "This is the port (recipe) consumed by vcpkg."
+    },
+    {
+      "name": "range-v3:x64-linux",
+      "SPDXID": "SPDXRef-binary",
+      "versionInfo": "8402d67035cbfff9d40942c6c6fe616907119b099eea7b62f40bd803cadff459",
+      "downloadLocation": "NONE",
+      "licenseConcluded": "BSL-1.0 AND MIT AND (NCSA OR MIT)",
+      "licenseDeclared": "NOASSERTION",
+      "copyrightText": "NOASSERTION",
+      "comment": "This is a binary package built by vcpkg."
+    },
+    {
+      "SPDXID": "SPDXRef-resource-1",
+      "name": "ericniebler/range-v3",
+      "downloadLocation": "git+https://github.com/ericniebler/range-v3@a81477931a8aa2ad025c6bda0609f38e09e4d7ec",
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "NOASSERTION",
+      "copyrightText": "NOASSERTION"
+    }
+  ],
+  "files": [
+    {
+      "fileName": ".//home/c4pt/opt/komodo-wallet-desktop/ci_tools_atomic_dex/vcpkg-repo/ports/range-v3/portfile.cmake",
+      "SPDXID": "SPDXRef-file-0",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "f8ef913c666793d5ef7b1079521d76c95174eabb0aa211527ab2a563d9a72bc0"
+        }
+      ],
+      "licenseConcluded": "NOASSERTION",
+      "copyrightText": "NOASSERTION"
+    },
+    {
+      "fileName": ".//home/c4pt/opt/komodo-wallet-desktop/ci_tools_atomic_dex/vcpkg-repo/ports/range-v3/vcpkg.json",
+      "SPDXID": "SPDXRef-file-1",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "8f5807d34ab63de77cf17d09a427ea56e078453c90ab4ff4e3227d5e1c3d6139"
+        }
+      ],
+      "licenseConcluded": "NOASSERTION",
+      "copyrightText": "NOASSERTION"
+    }
+  ]
+}

@@ -1,4 +1,4 @@
- # Building Atomicdex Desktop on Linux
+ # Building Bitstock  Desktop on Linux
 
 
 ### Prerequisites
@@ -7,7 +7,7 @@
 - [CMake](https://cmake.org/install/) 3.18 minimum
 
 
-### Clone AtomicDEX repository (with submodules)
+### Clone Bitstock  repository (with submodules)
 
 `git clone --recurse-submodules https://github.com/bitnet-io/bitstock-desktop-wallet.git`
 
@@ -170,7 +170,7 @@ ninja install
 ```
 
 
-# Building Atomicdex Desktop on MacOS
+# Building Bitstock  Desktop on MacOS
 
 
 ### Prerequisites
@@ -182,7 +182,7 @@ ninja install
 - macOS [command line tools](https://developer.apple.com/downloads)
 
 
-### Clone AtomicDEX repository (with submodules)
+### Clone Bitstock  repository (with submodules)
 
 `git clone --recurse-submodules https://github.com/bitnet-io/bitstock-wallet-desktop.git`
 
@@ -288,7 +288,7 @@ ninja install
 
 
 
-# Building Atomicdex Desktop on Windows
+# Building Bitstock  Desktop on Windows
 
 
 ### Prerequisites
@@ -297,7 +297,7 @@ ninja install
 - [CMake](https://cmake.org/install/) 3.18 minimum
 
 
-### Clone AtomicDEX repository (with submodules)
+### Clone Bitstock  repository (with submodules)
 
 `git clone --recurse-submodules https://github.com/bitnet-io/bitstock-desktop-wallet.git`
 
