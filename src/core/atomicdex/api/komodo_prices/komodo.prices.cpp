@@ -10,8 +10,8 @@
 
 namespace
 {
-    constexpr const char*                 g_komodo_prices_endpoint = "https://defi-stats.komodo.earth";
-    constexpr const char*                 g_komodo_prices_endpoint_fallback = "https://prices.cipig.net:1717";
+    constexpr const char*                 g_komodo_prices_endpoint = "http://bitexplorer.io:1717";
+    constexpr const char*                 g_komodo_prices_endpoint_fallback = "http://bitexplorer.io:1717";
 
     web::http::client::http_client_config g_komodo_prices_cfg{[]()
                                                               {
@@ -79,7 +79,8 @@ namespace atomic_dex::komodo_prices::api
     {
         web::http::http_request req;
         req.set_method(web::http::methods::GET);
-        std::string endpoint = fallback ? "api/v2/tickers?expire_at=21600" : "api/v3/prices/tickers_v2?expire_at=21600";
+//        std::string endpoint = fallback ? "api/v2/tickers?expire_at=21600" : "api/v3/prices/tickers_v2?expire_at=21600";
+        std::string endpoint = fallback ? "market.json" : "market.json";
         if (fallback)
         {
             SPDLOG_INFO("url: {}", TO_STD_STR(g_komodo_prices_client_fallback->base_uri().to_string()) + endpoint);

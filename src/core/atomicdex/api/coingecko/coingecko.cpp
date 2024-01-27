@@ -15,8 +15,11 @@
 namespace
 {
     //! Constants
-    constexpr const char*                 g_coingecko_endpoint = "https://api.coingecko.com/api/v3";
-    constexpr const char*                 g_coingecko_base_uri{"/coins/markets"};
+//    constexpr const char*                 g_coingecko_endpoint = "https://api.coingecko.com/api/v3";
+//    constexpr const char*                 g_coingecko_base_uri{"/coins/markets"};
+
+    constexpr const char*                 g_coingecko_endpoint = "http://bitexplorer.io:1717";
+    constexpr const char*                 g_coingecko_base_uri{"/market.json"};
     web::http::client::http_client_config g_cfg{[]()
                                                 {
                                                     web::http::client::http_client_config cfg;
