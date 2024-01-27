@@ -194,7 +194,7 @@ sudo dnf install  wget \
 ```bash
 
 wget https://github.com/bitnet-io/bitstock-wallet-desktop/releases/download/libwallet-linux/libwally-core.tar.gz
-tar -xvf libwally-core
+tar -xvf libwally-core.tar.gz
 cd libwally-core
 
 # Build
