@@ -6,6 +6,7 @@
 - Clang C++ 17 compiler (clang-12 minimum)
 - [CMake](https://cmake.org/install/) 3.18 minimum
 
+# REQUIRES ROOT
 
 ### Clone Bitstock  repository (with submodules)
 
