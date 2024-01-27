@@ -211,7 +211,10 @@ sudo make -j2 install
 Install vcpkg from within the `ci_tools_atomic_dex` folder:
 
 ```bash
-cd ci_tools_atomic_dex/vcpkg-repo
+cd ci_tools_atomic_dex
+wget https://github.com/bitnet-io/bitstock-wallet-desktop/releases/download/vcpkg-repo/vcpkg-repo.tar.gz
+tar -xvf vcpkg-repo.tar.gz
+cd vcpkg-repo
 ./bootstrap-vcpkg.sh
 ./vcpkg install
 ```
