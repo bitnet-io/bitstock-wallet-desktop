@@ -169,7 +169,7 @@ sudo dnf install  wget \
                   curl \
                   cmake \
                   perl \
-                  calng12-devel \
+                  clang12-devel \
                   ninja-build \
                   zstd \
                   mesa-libGL-devel \
