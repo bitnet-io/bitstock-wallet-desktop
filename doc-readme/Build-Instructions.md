@@ -127,7 +127,6 @@ cd libwally-core
 
 # Build
 ./tools/autogen.sh
-./tools/autogen.sh
 ./configure --disable-shared  # configure requires access to python binary on the PATH
 # either pass PYTHON_VERSION=3.X to the build command or link your python3.X installation to /usr/bin/python
 sudo make -j2 install
