@@ -117,15 +117,12 @@ sudo dnf install  wget \
 
 ```bash
 
-git clone https://github.com/KomodoPlatform/libwally-core.git
+wget https://github.com/bitnet-io/bitstock-wallet-desktop/releases/download/libwallet-linux/libwally-core.tar.gz
+tar -xvf libwally-core.tar.gz
 cd libwally-core
 
-# Initialise the libsecp sources (Needs to be run only once)
- git submodule init
- git submodule sync --recursive
- git submodule update --init --recursive
-
 # Build
+
 ./tools/autogen.sh
 ./configure --disable-shared  # configure requires access to python binary on the PATH
 # either pass PYTHON_VERSION=3.X to the build command or link your python3.X installation to /usr/bin/python
