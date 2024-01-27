@@ -77,6 +77,8 @@ feedback.
 # Building Bitstock  Desktop on Linux (Feodra or Ubuntu)
 
 
+# REQUIRES ROOT
+
 ### Prerequisites
 
 - Clang C++ 17 compiler (clang-12 minimum)
