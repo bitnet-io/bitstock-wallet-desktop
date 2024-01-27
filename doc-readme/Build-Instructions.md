@@ -9,7 +9,7 @@
 
 ### Clone Bitstock  repository (with submodules)
 
-`git clone --recurse-submodules https://github.com/bitnet-io/bitstock-desktop-wallet.git`
+`git clone --recurse-submodules https://github.com/bitnet-io/bitstock-wallet-desktop`
 
 
 ### Install Qt
