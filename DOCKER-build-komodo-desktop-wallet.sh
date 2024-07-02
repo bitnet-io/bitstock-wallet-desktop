@@ -113,3 +113,6 @@ cmake -DCMAKE_BUILD_TYPE=Release ../
 cmake --build . --target help
 
 cmake --build . --config Release --target komodo-wallet
+
+#binary should be in
+bin/AntaraAtomicDexAppDir/usr/bin/komodo-wallet
