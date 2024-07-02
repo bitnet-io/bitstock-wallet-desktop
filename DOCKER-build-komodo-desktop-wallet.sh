@@ -35,7 +35,13 @@ git clone https://github.com/KomodoPlatform/komodo-wallet-desktop && cd komodo-w
 
 
 python3 -m pip install --upgrade pip
-pip install aqtinstall==3.1.1
+
+#debian 10+11
+#pip install aqtinstall==3.1.1 
+
+#debian 12
+pip install aqtinstall==3.1.1 --break-system-packages
+
 										
 
 python3 -m aqt install-qt linux desktop 5.15.2 -O $HOME/Qt -b https://qt-mirror.dannhauer.de/ -m qtcharts debug_info qtwebengine
