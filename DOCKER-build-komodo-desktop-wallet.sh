@@ -32,6 +32,8 @@ sudo apt-get install build-essential \
 
 apt install python3-pip python cmake zip -y
 
+apt install libnss3 libxcomposite1 libxrandr2 libxcursor1 libxi6 libxtst6 libasound2 -y
+
 apt install build-essential libboost-system-dev libboost-thread-dev libboost-program-options-dev libboost-test-dev -y
 
 git clone https://github.com/KomodoPlatform/komodo-wallet-desktop
