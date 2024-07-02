@@ -107,8 +107,8 @@ sudo dnf install  wget \
                   openssl-devel \
                   libxkbcommon-x11 \
                   libxcb-* \
-                  gstreamer1-plugins-base-devel perl-FindBin perl perl-IPC-Cmd
-
+                  gstreamer1-plugins-base-devel perl-FindBin perl perl-IPC-Cmd \
+                  libstdc++-devel
 
 # Fresh versions of RedHat (9+) and Fedora (34+) come with clang15 and llvm15, no extra packages or configuration is required
 ```
