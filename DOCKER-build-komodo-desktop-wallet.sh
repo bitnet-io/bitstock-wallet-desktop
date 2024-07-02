@@ -76,8 +76,11 @@ sudo apt-get update
 									#export LDFLAGS=-stdlib=libc++
 export CXX=clang++-12
 export CC=clang-12
-export CMAKE_CXX_FLAGS="-w"
 
+#to suppress warnings or not
+#export CMAKE_CXX_FLAGS="-w"
+#add_definitions(-w)
+#To CMakeLists.txt
 
 
 git clone https://github.com/KomodoPlatform/libwally-core.git
