@@ -108,12 +108,11 @@ mkdir build
 cd build                #to list possible makefile targets
 			#cmake --build . --target help
 
-
-#patch cmake to 3.30 for 3.18 and higher
-
-wget https://github.com/Kitware/CMake/releases/download/v3.30.0-rc4/cmake-3.30.0-rc4-linux-x86_64.tar.gz
-tar -xvf cmake-3.30.0-rc4-linux-x86_64.tar.gz 
-cp -rf cmake-3.30.0-rc4-linux-x86_64/* /usr/
+			#debian10
+			#patch cmake to 3.30 for 3.18 and higher
+			#wget https://github.com/Kitware/CMake/releases/download/v3.30.0-rc4/cmake-3.30.0-rc4-linux-x86_64.tar.gz
+			#tar -xvf cmake-3.30.0-rc4-linux-x86_64.tar.gz 
+			#cp -rf cmake-3.30.0-rc4-linux-x86_64/* /usr/
 
 
 
