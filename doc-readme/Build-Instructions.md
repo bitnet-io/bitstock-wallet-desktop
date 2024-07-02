@@ -151,6 +151,7 @@ cd vcpkg-repo
 In your shell command prompt (Powershell/Zsh/Bash), from within the `root` folder (e.g. ~/BitStock-Desktop), type:
 
 ```bash
+cd ..
 mkdir build
 cd build              # create the 'build' folder if it doesn't exist
 cmake -DCMAKE_BUILD_TYPE=Release ../    # add -GNinja if you want to use the ninja build system.
@@ -163,6 +164,7 @@ cmake --build . --config Release --target bitstock-wallet
 
 
 ```
+cd ..
 mkdir build
 cd build              # create the 'build' folder if it doesn't exist
 cmake -DCMAKE_BUILD_TYPE=Release -GNinja ../
@@ -255,6 +257,7 @@ cd ci_tools_atomic_dex\vcpkg-repo
 In your shell command prompt (Powershell/Zsh/Bash), from within the `root` folder (e.g. ~/BitStock-Desktop), type:
 
 ```bash
+cd ..
 mkdir build
 cd build              # create the 'build' folder if it doesn't exist
 cmake -DCMAKE_BUILD_TYPE=Release ../    # add -GNinja if you want to use the ninja build system.
@@ -281,6 +284,7 @@ export APPLE_ID="satoshinakamoto@bitcoin.com"
 ```
 
 ```
+cd ..
 mkdir build
 cd build              # create the 'build' folder if it doesn't exist
 cmake -DCMAKE_BUILD_TYPE=Release -GNinja ../
@@ -379,6 +383,7 @@ cd ci_tools_atomic_dex\vcpkg-repo
 In your shell command prompt (Powershell/Zsh/Bash), from within the `root` folder (e.g. ~/BitStock-Desktop), started as Administrator, type:
 
 ```bash
+cd ..
 mkdir build
 cd build              # create the 'build' folder if it doesn't exist
 cmake -DCMAKE_BUILD_TYPE=Release ../ -GNinja
@@ -388,6 +393,7 @@ cmake --build . --config Release --target bitstock-wallet
 ### Bundle BitStock-Desktop (installer)
 
 ```
+cd ..
 mkdir build
 cd build              # create the 'build' folder if it doesn't exist
 cmake -DCMAKE_BUILD_TYPE=Release -GNinja ../
