@@ -127,7 +127,7 @@ cd libwally-core
 ./tools/autogen.sh
 ./configure --disable-shared  # configure requires access to python binary on the PATH
 # either pass PYTHON_VERSION=3.X to the build command or link your python3.X installation to /usr/bin/python
-sudo make -j2 install
+sudo make -j24 install
 ```
 
 
@@ -236,7 +236,7 @@ git clone https://github.com/KomodoPlatform/libwally-core.git
 cd libwally-core
 ./tools/autogen.sh
 PYTHON_VERSION=3 ./configure --disable-shared    # configure requires you to pass python version to use instead of deprecated python2
-sudo make -j2 install
+sudo make -j24 install
 ```
 
 
