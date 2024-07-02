@@ -105,8 +105,8 @@ cd ../..
 
 
 mkdir build
-cd build              
-cmake --build . --target help
+cd build                #to list possible makefile targets
+			#cmake --build . --target help
 
 
 #patch cmake to 3.30 for 3.18 and higher
