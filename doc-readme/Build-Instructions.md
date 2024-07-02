@@ -136,6 +136,7 @@ sudo make -j24 install
 Install vcpkg from within the `ci_tools_atomic_dex` folder:
 
 ```bash
+cd ..
 cd ci_tools_atomic_dex
 wget https://github.com/bitnet-io/bitstock-wallet-desktop/releases/download/vcpkg-repo/vcpkg-repo.tar.gz
 tar -xvf vcpkg-repo.tar.gz
@@ -243,6 +244,7 @@ sudo make -j24 install
 ### Bootstrap VCPKG modules
 
 ```bash
+cd ..
 cd ci_tools_atomic_dex\vcpkg-repo
 ./bootstrap-vcpkg.sh
 ./vcpkg install
@@ -366,6 +368,7 @@ Copy-Item "$env:LIBWALLY_DIR\wally.dll" -Destination "BitStock-Desktop\wally\wal
 ### Bootstrap VCPKG modules
 
 ```bash
+cd ..
 cd ci_tools_atomic_dex\vcpkg-repo
 .\bootstrap-vcpkg.bat
 .\vcpkg.exe install
