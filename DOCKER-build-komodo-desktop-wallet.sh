@@ -1,5 +1,5 @@
 echo 
-'docker run -it --net host -d -v /root/komodo-wallet-desktop:/opt/komodo-desktop-wallet debian:11
+'docker run -it --net host -d -v /root/komodo-wallet-desktop:/opt/komodo-desktop-wallet debian:10
 docker exec -it <docker_hash_here> bash'
 sleep 1s
 echo 'then run these commands'
@@ -43,9 +43,7 @@ cd komodo-wallet-desktop
  git submodule init
  git submodule sync --recursive
  git submodule update --init --recursive
-cd atomic_defi_design/imports/bignumberjs/bignumber.js
-wget https://raw.githubusercontent.com/MikeMcl/bignumber.js/master/bignumber.js
-cd ../../../..
+
 
 python3 -m pip install --upgrade pip
 pip install aqtinstall==3.1.1
