@@ -27,7 +27,8 @@ sudo apt-get install build-essential \
                     libxcb-xinerama0 \
                     libgstreamer-plugins-base1.0-dev \
                     git libnss3 libxcomposite1 libxrandr2 libxcursor1 libxi6 libxtst6 libasound2 librange-v3-dev \
-		    python3-pip python-is-python3 2to3 cmake zip build-essential libboost-system-dev libboost-thread-dev libboost-program-options-dev libboost-test-dev -y
+		    python3-pip python-is-python3 2to3 cmake zip build-essential libboost-system-dev libboost-thread-dev libboost-program-options-dev libboost-test-dev \
+      		    aptitude apt-file -y
 
 git clone https://github.com/KomodoPlatform/komodo-wallet-desktop && cd komodo-wallet-desktop &&  git submodule init &&  git submodule sync --recursive &&  git submodule update --init --recursive
 
@@ -55,13 +56,13 @@ export PATH=$PATH:/root/Qt/5.15.2/gcc_64/bin
 
 
 
-
-wget https://apt.llvm.org/llvm.sh
-chmod +x llvm.sh
-sudo ./llvm.sh 13
-sudo update-alternatives --install /usr/bin/clang++ clang++ /usr/bin/clang++-13 777
-sudo update-alternatives --install /usr/bin/clang clang /usr/bin/clang-13 777
-sudo apt-get update
+# debian11
+#wget https://apt.llvm.org/llvm.sh
+#chmod +x llvm.sh
+#sudo ./llvm.sh 12
+#sudo update-alternatives --install /usr/bin/clang++ clang++ /usr/bin/clang++-12 777
+#sudo update-alternatives --install /usr/bin/clang clang /usr/bin/clang-12 777
+#sudo apt-get update
 apt install clang-tidy -y									
 
 									# if you want to use libclang
@@ -72,8 +73,8 @@ apt install clang-tidy -y
 									#export LDFLAGS=-stdlib=libc++
 
 export CXXFLAGS="-Wnounused-parameter -Wnodeprecated-declarations -w"
-export CXX=clang++-13
-export CC=clang-13
+export CXX=clang++-14
+export CC=clang-14
 
 
 
@@ -92,14 +93,11 @@ cd ../
 
 
 cd ci_tools_atomic_dex
-rm -rf vcpkg-repo 
-wget https://github.com/bitnet-io/bitstock-wallet-desktop/releases/download/vcpkg-repo/vcpkg-repo.tar.gz
-tar -xvf vcpkg-repo.tar.gz
 cd vcpkg-repo
 ./bootstrap-vcpkg.sh
-wget https://github.com/ninja-build/ninja/releases/download/v1.12.1/ninja-linux.zip
-unzip ninja-linux.zip 
-cp -rf ninja /usr/bin/
+					#wget https://github.com/ninja-build/ninja/releases/download/v1.12.1/ninja-linux.zip
+					#unzip ninja-linux.zip 
+					#cp -rf ninja /usr/bin/
 ./vcpkg install
 cd ../..
 
