@@ -11,6 +11,7 @@ sudo apt-get install build-essential \
                     libgl1-mesa-dev \
                     ninja-build \
                     curl \
+		    lld \
                     wget \
                     zstd \
                     software-properties-common \
