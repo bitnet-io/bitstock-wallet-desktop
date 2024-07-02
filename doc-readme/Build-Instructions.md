@@ -1,5 +1,8 @@
  # Building Bitstock  Desktop on Linux
 
+# SKIP ALL OF THIS BUILD WITH DOCKER
+
+# https://raw.githubusercontent.com/bitnet-io/bitstock-wallet-desktop/main/BUILD-komodo-desktop-wallet.sh
 
 ### Prerequisites
 
