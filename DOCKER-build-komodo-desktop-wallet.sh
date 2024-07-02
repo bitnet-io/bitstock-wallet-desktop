@@ -37,11 +37,8 @@ git clone https://github.com/KomodoPlatform/komodo-wallet-desktop && cd komodo-w
 
 python3 -m pip install --upgrade pip
 
-#debian 10+11
-#pip install aqtinstall==3.1.1 
-
-#debian 12
-pip install aqtinstall==3.1.1 --break-system-packages
+debian 10+11
+pip install aqtinstall==3.1.1 
 
 										
 
@@ -56,13 +53,13 @@ export PATH=$PATH:/root/Qt/5.15.2/gcc_64/bin
 
 
 
-# debian11
-#wget https://apt.llvm.org/llvm.sh
-#chmod +x llvm.sh
-#sudo ./llvm.sh 12
-#sudo update-alternatives --install /usr/bin/clang++ clang++ /usr/bin/clang++-12 777
-#sudo update-alternatives --install /usr/bin/clang clang /usr/bin/clang-12 777
-#sudo apt-get update
+
+wget https://apt.llvm.org/llvm.sh
+chmod +x llvm.sh
+sudo ./llvm.sh 12
+sudo update-alternatives --install /usr/bin/clang++ clang++ /usr/bin/clang++-12 777
+sudo update-alternatives --install /usr/bin/clang clang /usr/bin/clang-12 777
+sudo apt-get update
 apt install clang-tidy -y									
 
 									# if you want to use libclang
@@ -73,9 +70,8 @@ apt install clang-tidy -y
 									#export LDFLAGS=-stdlib=libc++
 
 export CXXFLAGS="-Wnounused-parameter -Wnodeprecated-declarations -w"
-export CXX=clang++-14
-export CC=clang-14
-export CMAKE_CXX_FLAGS="-std=c++17"
+export CXX=clang++-12
+export CC=clang-12
 
 
 
@@ -95,9 +91,13 @@ cd ../
 cd ci_tools_atomic_dex
 cd vcpkg-repo
 ./bootstrap-vcpkg.sh
-					#wget https://github.com/ninja-build/ninja/releases/download/v1.12.1/ninja-linux.zip
-					#unzip ninja-linux.zip 
-					#cp -rf ninja /usr/bin/
+
+#patch ninja to higher version
+wget https://github.com/ninja-build/ninja/releases/download/v1.12.1/ninja-linux.zip
+unzip ninja-linux.zip 
+cp -rf ninja /usr/bin/
+
+
 ./vcpkg install
 cd ../..
 
@@ -105,14 +105,17 @@ cd ../..
 
 
 mkdir build
-cd build                #to list possible makefile targets
-			#cmake --build . --target help
+cd build               
 
-			#debian10
-			#patch cmake to 3.30 for 3.18 and higher
-			#wget https://github.com/Kitware/CMake/releases/download/v3.30.0-rc4/cmake-3.30.0-rc4-linux-x86_64.tar.gz
-			#tar -xvf cmake-3.30.0-rc4-linux-x86_64.tar.gz 
-			#cp -rf cmake-3.30.0-rc4-linux-x86_64/* /usr/
+#to list possible makefile targets
+#cmake --build . --target help
+
+#debian10
+#patch cmake to 3.30 for 3.18 and higher
+   
+wget https://github.com/Kitware/CMake/releases/download/v3.30.0-rc4/cmake-3.30.0-rc4-linux-x86_64.tar.gz
+tar -xvf cmake-3.30.0-rc4-linux-x86_64.tar.gz 
+cp -rf cmake-3.30.0-rc4-linux-x86_64/* /usr/
 
 
 
