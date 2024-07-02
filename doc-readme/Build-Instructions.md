@@ -1,5 +1,8 @@
  # Building Bitstock  Desktop on Linux
+# 07-01-2024
+# Docker build script to build linux x86_64 komodo-desktop-wallet
 
+# https://raw.githubusercontent.com/bitnet-io/bitstock-wallet-desktop/main/DOCKER-build-komodo-desktop-wallet.sh
 
 
 ### Prerequisites
