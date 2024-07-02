@@ -56,9 +56,9 @@ export PATH=$PATH:/root/Qt/5.15.2/gcc_64/bin
 
 wget https://apt.llvm.org/llvm.sh
 chmod +x llvm.sh
-sudo ./llvm.sh 12
-sudo update-alternatives --install /usr/bin/clang++ clang++ /usr/bin/clang++-12 777
-sudo update-alternatives --install /usr/bin/clang clang /usr/bin/clang-12 777
+sudo ./llvm.sh 13
+sudo update-alternatives --install /usr/bin/clang++ clang++ /usr/bin/clang++-13 777
+sudo update-alternatives --install /usr/bin/clang clang /usr/bin/clang-13 777
 sudo apt-get update
 apt install clang-tidy -y									
 
@@ -70,8 +70,8 @@ apt install clang-tidy -y
 									#export LDFLAGS=-stdlib=libc++
 
 export CXXFLAGS="-Wnounused-parameter -Wnodeprecated-declarations -w"
-export CXX=clang++-12
-export CC=clang-12
+export CXX=clang++-13
+export CC=clang-13
 
 
 
