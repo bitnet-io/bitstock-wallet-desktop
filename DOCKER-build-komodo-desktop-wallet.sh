@@ -1,9 +1,7 @@
-echo 
-'docker run -it --net host -d -v /root/komodo-wallet-desktop:/opt/komodo-desktop-wallet debian:10
-docker exec -it <docker_hash_here> bash'
-sleep 1s
-echo 'then run these commands'
-sleep 2s
+#docker run -it --net host -d -v /root/komodo-wallet-desktop:/opt/komodo-desktop-wallet debian:10
+#docker exec -it <docker_hash_here> bash
+
+
 
 apt-get update -y
 apt install sudo
@@ -11,7 +9,6 @@ sudo apt-get install build-essential \
                     libgl1-mesa-dev \
                     ninja-build \
                     curl \
-		    lld \
                     wget \
                     zstd \
                     software-properties-common \
@@ -31,9 +28,11 @@ sudo apt-get install build-essential \
                     libgstreamer-plugins-base1.0-dev \
                     git -y
 
-apt install python3-pip python cmake zip -y
 
-apt install libnss3 libxcomposite1 libxrandr2 libxcursor1 libxi6 libxtst6 libasound2 -y
+apt install libnss3 libxcomposite1 libxrandr2 libxcursor1 libxi6 libxtst6 libasound2 librange-v3-dev -y
+
+
+apt install python3-pip python cmake zip -y
 
 apt install build-essential libboost-system-dev libboost-thread-dev libboost-program-options-dev libboost-test-dev -y
 
@@ -45,41 +44,44 @@ cd komodo-wallet-desktop
  git submodule update --init --recursive
 
 
+
+
 python3 -m pip install --upgrade pip
 pip install aqtinstall==3.1.1
+										
+
 python3 -m aqt install-qt linux desktop 5.15.2 -O $HOME/Qt -b https://qt-mirror.dannhauer.de/ -m qtcharts debug_info qtwebengine
 
 
 export QT_INSTALL_CMAKE_PATH=~/Qt/5.15.2/gcc_64/lib/cmake
 export QT_ROOT=~/Qt/5.15.2
-
 export PATH=$PATH:/root/Qt/5.15.2/gcc_64/bin
-export QMAKE_CXXFLAGS="-fno-sized-deallocation"
+
+
+
+
 
 
 wget https://apt.llvm.org/llvm.sh
 chmod +x llvm.sh
-sudo ./llvm.sh 12
-
-
-sudo update-alternatives --install /usr/bin/clang++ clang++ /usr/bin/clang++-12 777
-sudo update-alternatives --install /usr/bin/clang clang /usr/bin/clang-12 777
+sudo ./llvm.sh 13
+sudo update-alternatives --install /usr/bin/clang++ clang++ /usr/bin/clang++-13 777
+sudo update-alternatives --install /usr/bin/clang clang /usr/bin/clang-13 777
 sudo apt-get update
+apt install clang-tidy -y									
+
 									# if you want to use libclang
 									#sudo apt-get install libc++abi-12-dev libc++-12-dev -y
-
 									# Add the following environment variables to your `~/.bashrc` or `~/.zshrc` profiles:
-
 									#if you want to use libclang
 									#export CXXFLAGS=-stdlib=libc++
 									#export LDFLAGS=-stdlib=libc++
-export CXX=clang++-12
-export CC=clang-12
 
-#to suppress warnings or not
-#export CMAKE_CXX_FLAGS="-w"
-#add_definitions(-w)
-#To CMakeLists.txt
+export CXXFLAGS="-Wnodeprecated-declarations -w"
+export CXX=clang++-13
+export CC=clang-13
+
+
 
 
 git clone https://github.com/KomodoPlatform/libwally-core.git
@@ -96,25 +98,32 @@ cd ../
 
 
 cd ci_tools_atomic_dex
-
+rm -rf vcpkg-repo 
 wget https://github.com/bitnet-io/bitstock-wallet-desktop/releases/download/vcpkg-repo/vcpkg-repo.tar.gz
 tar -xvf vcpkg-repo.tar.gz
 cd vcpkg-repo
 ./bootstrap-vcpkg.sh
+wget https://github.com/ninja-build/ninja/releases/download/v1.12.1/ninja-linux.zip
+unzip ninja-linux.zip 
+cp -rf ninja /usr/bin/
 ./vcpkg install
-cd ..
+cd ../..
 
 
 
 
-cd ..
 mkdir build
-cd build  
-make -j24 clean # create the 'build' folder if it doesn't exist
-cmake -DCMAKE_BUILD_TYPE=Release ../ 
+cd build              
 cmake --build . --target help
 
-cmake --build . --config Release --target komodo-wallet
 
-#binary should be in
-bin/AntaraAtomicDexAppDir/usr/bin/komodo-wallet
+#patch cmake to 3.30 for 3.18 and higher
+
+wget https://github.com/Kitware/CMake/releases/download/v3.30.0-rc4/cmake-3.30.0-rc4-linux-x86_64.tar.gz
+tar -xvf cmake-3.30.0-rc4-linux-x86_64.tar.gz 
+cp -rf cmake-3.30.0-rc4-linux-x86_64/* /usr/
+
+
+
+cmake -DCMAKE_BUILD_TYPE=Release ../ 
+cmake --build . --config Release --target komodo-wallet
