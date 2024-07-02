@@ -76,7 +76,7 @@ sudo apt-get update
 									#export LDFLAGS=-stdlib=libc++
 export CXX=clang++-12
 export CC=clang-12
-export CPPFLAGS="-w"
+export CMAKE_CXX_FLAGS="-w"
 
 
 
