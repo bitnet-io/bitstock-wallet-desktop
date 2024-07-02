@@ -77,7 +77,7 @@ apt install clang-tidy -y
 									#export CXXFLAGS=-stdlib=libc++
 									#export LDFLAGS=-stdlib=libc++
 
-export CXXFLAGS="-Wnodeprecated-declarations -w"
+export CXXFLAGS="-Wnounused-parameter -Wnodeprecated-declarations -w"
 export CXX=clang++-13
 export CC=clang-13
 
