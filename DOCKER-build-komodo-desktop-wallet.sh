@@ -26,15 +26,9 @@ sudo apt-get install build-essential \
                     libxcb-render-util0-dev \
                     libxcb-xinerama0 \
                     libgstreamer-plugins-base1.0-dev \
-                    git -y
-
-
-apt install libnss3 libxcomposite1 libxrandr2 libxcursor1 libxi6 libxtst6 libasound2 librange-v3-dev -y
-
-
-apt install python3-pip python cmake zip -y
-
-apt install build-essential libboost-system-dev libboost-thread-dev libboost-program-options-dev libboost-test-dev -y
+                    git \
+		    libnss3 libxcomposite1 libxrandr2 libxcursor1 libxi6 libxtst6 libasound2 librange-v3-dev \
+		    python3-pip python cmake zip build-essential libboost-system-dev libboost-thread-dev libboost-program-options-dev libboost-test-dev -y
 
 git clone https://github.com/KomodoPlatform/komodo-wallet-desktop
 
