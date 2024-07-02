@@ -107,7 +107,8 @@ cd ..
 
 cd ..
 mkdir build
-cd build              # create the 'build' folder if it doesn't exist
+cd build  
+make -j24 clean # create the 'build' folder if it doesn't exist
 cmake -DCMAKE_BUILD_TYPE=Release ../ 
 cmake --build . --target help
 
