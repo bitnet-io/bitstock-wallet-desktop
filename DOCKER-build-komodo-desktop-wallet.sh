@@ -75,7 +75,7 @@ apt install clang-tidy -y
 export CXXFLAGS="-Wnounused-parameter -Wnodeprecated-declarations -w"
 export CXX=clang++-14
 export CC=clang-14
-
+export CMAKE_CXX_FLAGS="-std=c++17"
 
 
 
