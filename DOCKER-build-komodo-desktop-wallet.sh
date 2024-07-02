@@ -1,4 +1,4 @@
-#docker run -it --net host -d -v /root/komodo-wallet-desktop:/opt/komodo-desktop-wallet debian:12
+#docker run -it --net host -d -v /root/komodo-wallet-desktop:/opt/komodo-desktop-wallet debian:10
 #docker exec -it <docker_hash_here> bash
 
 
@@ -27,7 +27,7 @@ sudo apt-get install build-essential \
                     libxcb-xinerama0 \
                     libgstreamer-plugins-base1.0-dev \
                     git libnss3 libxcomposite1 libxrandr2 libxcursor1 libxi6 libxtst6 libasound2 librange-v3-dev \
-		    python3-pip python-is-python3 2to3 cmake zip build-essential libboost-system-dev libboost-thread-dev libboost-program-options-dev libboost-test-dev \
+		    python3-pip python cmake zip build-essential libboost-system-dev libboost-thread-dev libboost-program-options-dev libboost-test-dev \
       		    aptitude apt-file -y
 
 git clone https://github.com/KomodoPlatform/komodo-wallet-desktop && cd komodo-wallet-desktop &&  git submodule init &&  git submodule sync --recursive &&  git submodule update --init --recursive
