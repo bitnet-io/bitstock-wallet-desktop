@@ -55,7 +55,7 @@ export QT_INSTALL_CMAKE_PATH=~/Qt/5.15.2/gcc_64/lib/cmake
 export QT_ROOT=~/Qt/5.15.2
 
 export PATH=$PATH:/root/Qt/5.15.2/gcc_64/bin
-export QMAKE_CXXFLAGS="-fno-sized-deallocation -w"
+export QMAKE_CXXFLAGS="-fno-sized-deallocation"
 
 
 wget https://apt.llvm.org/llvm.sh
@@ -76,7 +76,7 @@ sudo apt-get update
 									#export LDFLAGS=-stdlib=libc++
 export CXX=clang++-12
 export CC=clang-12
-
+export CPPFLAGS="-w"
 
 
 
