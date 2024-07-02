@@ -40,6 +40,9 @@ cd komodo-wallet-desktop
  git submodule init
  git submodule sync --recursive
  git submodule update --init --recursive
+cd atomic_defi_design/imports/bignumberjs/bignumber.js
+wget https://raw.githubusercontent.com/MikeMcl/bignumber.js/master/bignumber.js
+cd ../../../..
 
 python3 -m pip install --upgrade pip
 pip install aqtinstall==3.1.1
