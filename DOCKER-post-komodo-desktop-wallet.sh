@@ -132,8 +132,8 @@ cmake .. -DCMAKE_INSTALL_PREFIX=/usr -DBUILD_SHARED_LIBS=ON -DCMAKE_BUILD_TYPE=R
 cmake --build . --config Release --target komodo-wallet
 
 
-wget https://github.com/linuxdeploy/linuxdeploy/releases/download/1-alpha-20240109-1/linuxdeploy-x86_64.AppImage
-chmod +x linuxdeploy-x86_64.AppImage
-./linuxdeploy-x86_64.AppImage --appdir ./AppDir/ --output appimage --icon-filename --desktop-file myprogram.desktop --icon-file icon
+#wget https://github.com/linuxdeploy/linuxdeploy/releases/download/1-alpha-20240109-1/linuxdeploy-x86_64.AppImage
+#chmod +x linuxdeploy-x86_64.AppImage
+#./linuxdeploy-x86_64.AppImage --appdir=./bin/AntaraAtomicDexTestsAppDir --desktop-file=./komodo-desktop-icon.desktop --executable=./bin/AntaraAtomicDexAppDir/usr/bin/komodo-wallet --output=appimage -i icon.png
 
 
