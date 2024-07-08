@@ -5,7 +5,7 @@ echo 'docker exec -it <docker_hash_here> bash'
 sleep 2s
 
 chmod 1777 /tmp
-apt update && apt install apt-utils wget sudo unzip git software-properties-common gnupg build-essential -y && wget https://raw.githubusercontent.com/bitnet-io/bitstock-wallet-desktop/main/build-env.sh && chmod +x build-env.sh && ./build-env.sh
+apt update && apt install apt-utils wget sudo unzip git gnupg build-essential -y && wget https://raw.githubusercontent.com/bitnet-io/bitstock-wallet-desktop/main/build-env.sh && chmod +x build-env.sh && ./build-env.sh
 
 
 
