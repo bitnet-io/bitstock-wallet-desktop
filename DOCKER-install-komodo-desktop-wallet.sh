@@ -3,6 +3,7 @@ sleep 1s
 echo 'docker exec -it <docker_hash_here> bash'
 sleep 2s
 
+echo '
 apt-get update
 apt install wget -y
 
@@ -12,3 +13,4 @@ chmod +x DOCKER-post-komodo-desktop-wallet.sh
 ./DOCKER-post-komodo-desktop-wallet.sh
 echo 'then run'
 cmake --build . --config Release --target komodo-wallet
+'
