@@ -73,7 +73,7 @@ cd libwally-core
 ./configure --disable-shared --prefix=/usr
 															#./configure --disable-shared  # configure requires access to python binary on the PATH
 															# either pass PYTHON_VERSION=3.X to the build command or link your python3.X installation to /usr/bin/python
-sudo make -j24 install
+make -j24 install
 cd ../
 
 
@@ -93,8 +93,8 @@ cd ../..
 
 
 
-mkdir build
-cd build               
+#mkdir build
+#cd build               
 
 #to list possible makefile targets
 #cmake --build . --target help
@@ -102,9 +102,11 @@ cd build
 #debian10
 #patch cmake to 3.30 for 3.18 and higher
    
-wget https://github.com/Kitware/CMake/releases/download/v3.30.0-rc4/cmake-3.30.0-rc4-linux-x86_64.tar.gz
-tar -xvf cmake-3.30.0-rc4-linux-x86_64.tar.gz 
-cp -rf cmake-3.30.0-rc4-linux-x86_64/* /usr/ 
+#wget https://github.com/Kitware/CMake/releases/download/v3.30.0-rc4/cmake-3.30.0-rc4-linux-x86_64.tar.gz
+#tar -xvf cmake-3.30.0-rc4-linux-x86_64.tar.gz 
+#cp -rf cmake-3.30.0-rc4-linux-x86_64/* /usr/ 
+
+
 mkdir build && cd build
 
 export QT_INSTALL_CMAKE_PATH=~/Qt/5.15.2/gcc_64/lib/cmake
