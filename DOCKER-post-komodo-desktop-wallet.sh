@@ -52,8 +52,8 @@ chmod +x llvm.sh
 sudo ./llvm.sh 13
 sudo update-alternatives --install /usr/bin/clang++ clang++ /usr/bin/clang++-13 777
 sudo update-alternatives --install /usr/bin/clang clang /usr/bin/clang-13 777
-sudo apt-get update
-apt install clang-tidy -y									
+#sudo apt-get update
+#apt install clang-tidy -y									
 
 									# if you want to use libclang
 									#sudo apt-get install libc++abi-12-dev libc++-12-dev -y
