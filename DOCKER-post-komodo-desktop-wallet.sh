@@ -2,6 +2,8 @@
 
 cd /opt/komodo-desktop-wallet
 
+#                    software-properties-common \
+
 apt-get update -y
 apt-get install build-essential \
 		    sudo \
@@ -10,7 +12,6 @@ apt-get install build-essential \
                     curl \
                     wget \
                     zstd \
-                    software-properties-common \
                     lsb-release \
                     libpulse-dev \
                     libtool \
