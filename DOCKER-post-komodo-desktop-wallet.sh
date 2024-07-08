@@ -1,3 +1,5 @@
+#!/bin/sh
+
 cd /opt/komodo-desktop-wallet
 
 apt-get update -y
