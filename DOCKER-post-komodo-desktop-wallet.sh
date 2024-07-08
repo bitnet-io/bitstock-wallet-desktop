@@ -122,6 +122,6 @@ export PATH=$PATH:/root/Qt/5.15.2/gcc_64/bin
 sleep 5s
 echo 'enter dir and build'
 echo 'cd /opt/komodo-desktop-wallet/komodo-wallet-desktop && make build && cd build'
-echo 'cmake -DCMAKE_BUILD_TYPE=Release ../ '
+echo ' cmake -DBUILD_SHARED_LIBS=ON -DCMAKE_BUILD_TYPE=Release ../  '
 echo  'cmake --build . --config Release --target komodo-wallet'
 
