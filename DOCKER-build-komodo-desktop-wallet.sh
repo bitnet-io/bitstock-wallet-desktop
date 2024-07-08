@@ -39,9 +39,6 @@ python3 -m pip install --upgrade pip
 
 debian 10+11
 pip install aqtinstall==3.1.1 
-
-										
-
 python3 -m aqt install-qt linux desktop 5.15.2 -O $HOME/Qt -b https://qt-mirror.dannhauer.de/ -m qtcharts debug_info qtwebengine
 
 
