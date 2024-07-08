@@ -1,5 +1,5 @@
 mkdir  /root/komodo-wallet-desktop
-docker run -it --net host -d -v /root/komodo-wallet-desktop:/opt/komodo-desktop-wallet debian:10
+docker run -it --net host -d -v /root/komodo-wallet-desktop:/opt/komodo-desktop-wallet debian:11
 sleep 1s
 echo 'docker exec -it <docker_hash_here> bash'
 sleep 2s
