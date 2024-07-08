@@ -1,6 +1,5 @@
 #!/bin/sh
 
-cd /opt/komodo-desktop-wallet
 
 #                   
 
