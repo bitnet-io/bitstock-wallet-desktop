@@ -34,12 +34,11 @@ git clone https://github.com/KomodoPlatform/komodo-wallet-desktop && cd komodo-w
 
 
 
-python3 -m pip install --upgrade pip
 
 #debian 10+11
-python3 -m pip install --upgrade pip
-pip install aqtinstall==3.1.1
-python3 -m aqt install-qt linux desktop 5.15.2 -O $HOME/Qt -b https://qt-mirror.dannhauer.de/ -m qtcharts debug_info qtwebengine
+#python3 -m pip install --upgrade pip
+#pip install aqtinstall==3.1.1
+#python3 -m aqt install-qt linux desktop 5.15.2 -O $HOME/Qt -b https://qt-mirror.dannhauer.de/ -m qtcharts debug_info qtwebengine
 
 
 export QT_INSTALL_CMAKE_PATH=~/Qt/5.15.2/gcc_64/lib/cmake
@@ -116,6 +115,9 @@ cp -rf cmake-3.30.0-rc4-linux-x86_64/* /usr/
 cd /opt/komodo-desktop-wallet/komodo-wallet-desktop
 mkdir build && cd build
 
+python3 -m pip install --upgrade pip
+pip install aqtinstall==3.1.1
+python3 -m aqt install-qt linux desktop 5.15.2 -O $HOME/Qt -b https://qt-mirror.dannhauer.de/ -m qtcharts debug_info qtwebengine
 
 cmake -DCMAKE_BUILD_TYPE=Release ../ 
 cmake --build . --config Release --target komodo-wallet
