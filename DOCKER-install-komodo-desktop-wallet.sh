@@ -8,7 +8,7 @@ sleep 1s
 echo 'docker exec -it <docker_hash_here> bash'
 sleep 2s
 
-mkdir cd /opt/komodo-desktop-wallet
+cd /opt/komodo-desktop-wallet
 wget https://raw.githubusercontent.com/bitnet-io/bitstock-wallet-desktop/main/build-env.sh && chmod +x build-env.sh && ./build-env.sh
 
 
