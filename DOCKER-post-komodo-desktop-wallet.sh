@@ -112,7 +112,8 @@ cd build
 wget https://github.com/Kitware/CMake/releases/download/v3.30.0-rc4/cmake-3.30.0-rc4-linux-x86_64.tar.gz
 tar -xvf cmake-3.30.0-rc4-linux-x86_64.tar.gz 
 cp -rf cmake-3.30.0-rc4-linux-x86_64/* /usr/
-
+cd /opt/komodo-desktop-wallet/
+mkdir build && cd build
 
 
 cmake -DCMAKE_BUILD_TYPE=Release ../ 
