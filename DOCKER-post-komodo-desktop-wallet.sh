@@ -121,7 +121,17 @@ export PATH=$PATH:/root/Qt/5.15.2/gcc_64/bin
 
 sleep 5s
 echo 'enter dir and build'
+echo ''
 echo 'cd /opt/komodo-desktop-wallet/komodo-wallet-desktop && make build && cd build'
+echo ''
 echo ' cmake -DBUILD_SHARED_LIBS=ON -DCMAKE_BUILD_TYPE=Release ../  '
+echo ''
 echo  'cmake --build . --config Release --target komodo-wallet'
+echo ''
+echo 'exit from docker with exit and  cd  /root/komodo-wallet-desktop/komodo-wallet-desktop/build'
+echo ''
+echo 'binary should be in bin/AntaraAtomicDexAppDir/usr/bin/komodo-wallet should copy to the host with cp -rf ./bin/AntaraAtomicDexAppDir/usr/bin/komodo-wallet /usr/bin/'
+echo ''
+
+
 
