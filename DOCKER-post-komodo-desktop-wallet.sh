@@ -3,36 +3,27 @@
 
 #                   
 
-apt-mark hold systemd*
-apt-get update -y
-apt-get install build-essential \
-		    sudo \
-                    gnupg \
-                    lsb-release \
-                    software-properties-common \
-		    libgl1-mesa-dev \
-                    ninja-build \
-                    curl \
-                    wget \
-                    zstd \
-                    libpulse-dev \
-                    libtool \
-                    autoconf \
-                    unzip \
-                    libssl-dev \
-                    libxkbcommon-x11-0 \
-                    libxcb-icccm4 \
-                    libxcb-image0 \
-                    libxcb1-dev \
-                    libxcb-keysyms1-dev \
-                    libxcb-render-util0-dev \
-                    libxcb-xinerama0 \
-                    libgstreamer-plugins-base1.0-dev \
-                    git libnss3 libxcomposite1 libxrandr2 libxcursor1 libxi6 libxtst6 libasound2 librange-v3-dev \
-		    python3-pip python cmake zip build-essential libboost-system-dev libboost-thread-dev libboost-program-options-dev libboost-test-dev \
-      		    aptitude apt-file qtbase5-dev qtdeclarative5-dev qttools5-dev libqt5*dev qttools5-dev-tools qtquickcontrols2-5-dev \
-	            qtwebengine5-dev libqt5websockets5-dev libqt5svg5 libqt5svg5-dev libuchardet-dev -y
-
+sudo dnf update
+sudo dnf groupinstall "Development Tools" "Development Libraries"
+sudo dnf install  wget \
+                  curl \
+                  cmake \
+                  perl \
+                  calng12-devel \
+                  ninja-build \
+                  zstd \
+                  mesa-libGL-devel \
+                  redhat-lsb-core \
+                  libtool \
+                  autoconf \
+                  zip \
+                  unzip \
+                  openssl \
+                  openssl-devel \
+                  libxkbcommon-x11 \
+                  libxcb-* \
+                  gstreamer1-plugins-base-devel
+		  
 git clone https://github.com/KomodoPlatform/komodo-wallet-desktop && cd komodo-wallet-desktop &&  git submodule init &&  git submodule sync --recursive &&  git submodule update --init --recursive
 
 
@@ -54,8 +45,8 @@ python3 -m aqt install-qt linux desktop 5.15.2 -O $HOME/Qt -b https://qt-mirror.
 wget https://apt.llvm.org/llvm.sh
 chmod +x llvm.sh
 sudo ./llvm.sh 13
-sudo update-alternatives --install /usr/bin/clang++ clang++ /usr/bin/clang++-13 777
-sudo update-alternatives --install /usr/bin/clang clang /usr/bin/clang-13 777
+#sudo update-alternatives --install /usr/bin/clang++ clang++ /usr/bin/clang++-13 777
+#sudo update-alternatives --install /usr/bin/clang clang /usr/bin/clang-13 777
 #sudo apt-get update
 #apt install clang-tidy -y									
 
