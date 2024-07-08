@@ -39,7 +39,7 @@ python3 -m aqt install-qt linux desktop 5.15.2 -O $HOME/Qt -b https://qt-mirror.
 
 
 
-
+yum install llvm clang clang-devel
 
 #wget https://apt.llvm.org/llvm.sh
 #chmod +x llvm.sh
@@ -57,8 +57,8 @@ python3 -m aqt install-qt linux desktop 5.15.2 -O $HOME/Qt -b https://qt-mirror.
 									#export LDFLAGS=-stdlib=libc++
 
 export CXXFLAGS="-Wnounused-parameter -Wnodeprecated-declarations -w"
-export CXX=clang++-13
-export CC=clang-13
+export CXX=clang++
+export CC=clang
 
 
 
