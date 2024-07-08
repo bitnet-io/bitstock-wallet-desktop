@@ -3,10 +3,10 @@
 
 #                   
 
-sudo dnf update
-sudo dnf groupinstall "Development Tools" "Development Libraries"
-sudo dnf install  wget \
-                  curl \
+dnf update
+dnf groupinstall "Development Tools" "Development Libraries" -y
+dnf install  wget \
+                 curl \
                   cmake \
                   perl \
                   calng12-devel \
@@ -22,7 +22,7 @@ sudo dnf install  wget \
                   openssl-devel \
                   libxkbcommon-x11 \
                   libxcb-* \
-                  gstreamer1-plugins-base-devel
+                  gstreamer1-plugins-base-devel -y
 		  
 git clone https://github.com/KomodoPlatform/komodo-wallet-desktop && cd komodo-wallet-desktop &&  git submodule init &&  git submodule sync --recursive &&  git submodule update --init --recursive
 
