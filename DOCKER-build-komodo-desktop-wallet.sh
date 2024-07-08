@@ -4,8 +4,8 @@
 
 
 apt-get update -y
-apt install sudo
-sudo apt-get install build-essential \
+apt-get install build-essential \
+		     sudo \
                     libgl1-mesa-dev \
                     ninja-build \
                     curl \
