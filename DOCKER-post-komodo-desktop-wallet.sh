@@ -4,7 +4,6 @@ cd /opt/komodo-desktop-wallet
 
 #                   
 
-chmod 1777 /tmp
 apt-mark hold systemd*
 apt-get update -y
 apt-get install build-essential \
