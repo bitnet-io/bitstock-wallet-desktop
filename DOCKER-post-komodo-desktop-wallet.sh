@@ -82,9 +82,9 @@ cd vcpkg-repo
 ./bootstrap-vcpkg.sh
 
 #patch ninja to higher version
-wget https://github.com/ninja-build/ninja/releases/download/v1.12.1/ninja-linux.zip
-unzip ninja-linux.zip 
-cp -rf ninja /usr/bin/
+#wget https://github.com/ninja-build/ninja/releases/download/v1.12.1/ninja-linux.zip
+#unzip ninja-linux.zip 
+#cp -rf ninja /usr/bin/
 
 
 ./vcpkg install
