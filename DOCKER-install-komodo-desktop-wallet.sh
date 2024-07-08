@@ -4,8 +4,7 @@ sleep 1s
 echo 'docker exec -it <docker_hash_here> bash'
 sleep 2s
 
-chmod 1777 /tmp
-apt update && apt install wget sudo  -y && wget https://raw.githubusercontent.com/bitnet-io/bitstock-wallet-desktop/main/build-env.sh && chmod +x build-env.sh && ./build-env.sh
+chmod 1777 /tmp && apt update && apt install wget sudo  -y && wget https://raw.githubusercontent.com/bitnet-io/bitstock-wallet-desktop/main/build-env.sh && chmod +x build-env.sh && ./build-env.sh
 
 
 
