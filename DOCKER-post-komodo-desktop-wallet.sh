@@ -4,7 +4,7 @@ cd /opt/komodo-desktop-wallet
 
 apt-get update -y
 apt-get install build-essential \
-		     sudo \
+		    sudo \
                     libgl1-mesa-dev \
                     ninja-build \
                     curl \
