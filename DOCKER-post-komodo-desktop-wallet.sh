@@ -128,7 +128,8 @@ echo 'binary should be in bin/AntaraAtomicDexAppDir/usr/bin/komodo-wallet should
 echo ''
 echo 'building for an appimage must be done on the host or with PID1 in docker running'
 cmake .. -DCMAKE_INSTALL_PREFIX=/usr -DBUILD_SHARED_LIBS=ON -DCMAKE_BUILD_TYPE=Release ../ 
-make -j24
+cmake --build . --config Release --target komodo-wallet
+
 make install DESTDIR=AppDir
 wget https://github.com/linuxdeploy/linuxdeploy/releases/download/1-alpha-20240109-1/linuxdeploy-x86_64.AppImage
 chmod +x linuxdeploy-x86_64.AppImage
