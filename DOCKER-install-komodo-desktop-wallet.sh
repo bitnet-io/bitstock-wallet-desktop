@@ -6,7 +6,7 @@ sleep 2s
 
 chmod 1777 /tmp
 apt update
-apt install wget sudo -y && wget https://raw.githubusercontent.com/bitnet-io/bitstock-wallet-desktop/main/build-env.sh && chmod +x build-env.sh && ./build-env.sh
+apt install wget sudo unzip -y && wget https://raw.githubusercontent.com/bitnet-io/bitstock-wallet-desktop/main/build-env.sh && chmod +x build-env.sh && ./build-env.sh
 
 
 
