@@ -2,18 +2,19 @@
 
 cd /opt/komodo-desktop-wallet
 
-#                    software-properties-common \
+#                   
+#                     lsb-release \
 
 apt-get update -y
 apt-get install build-essential \
 		    sudo \
+                    software-properties-common \
                     gnupg \
                     libgl1-mesa-dev \
                     ninja-build \
                     curl \
                     wget \
                     zstd \
-                    lsb-release \
                     libpulse-dev \
                     libtool \
                     autoconf \
