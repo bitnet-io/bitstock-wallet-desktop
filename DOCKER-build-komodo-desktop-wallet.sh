@@ -1,7 +1,7 @@
 #docker run -it --net host -d -v /root/komodo-wallet-desktop:/opt/komodo-desktop-wallet debian:10
 #docker exec -it <docker_hash_here> bash
 
-
+cd /opt/komodo-desktop-wallet
 
 apt-get update -y
 apt-get install build-essential \
