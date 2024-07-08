@@ -41,9 +41,9 @@ python3 -m aqt install-qt linux desktop 5.15.2 -O $HOME/Qt -b https://qt-mirror.
 
 
 
-wget https://apt.llvm.org/llvm.sh
-chmod +x llvm.sh
-sudo ./llvm.sh 13
+#wget https://apt.llvm.org/llvm.sh
+#chmod +x llvm.sh
+#sudo ./llvm.sh 13
 #sudo update-alternatives --install /usr/bin/clang++ clang++ /usr/bin/clang++-13 777
 #sudo update-alternatives --install /usr/bin/clang clang /usr/bin/clang-13 777
 #sudo apt-get update
