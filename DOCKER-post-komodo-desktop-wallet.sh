@@ -4,11 +4,11 @@ cd /opt/komodo-desktop-wallet
 
 #                   
 #                     lsb-release \
+#                    software-properties-common \
 
 apt-get update -y
 apt-get install build-essential \
 		    sudo \
-                    software-properties-common \
                     gnupg \
                     libgl1-mesa-dev \
                     ninja-build \
