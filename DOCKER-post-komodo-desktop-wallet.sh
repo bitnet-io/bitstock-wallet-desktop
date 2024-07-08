@@ -39,7 +39,7 @@ python3 -m aqt install-qt linux desktop 5.15.2 -O $HOME/Qt -b https://qt-mirror.
 
 
 
-yum install llvm clang clang-devel libtool -y
+yum install llvm clang clang-devel libtool perl-IPC-Cmd -y
 cp -rf /usr/bin/python3 /usr/bin/python
 
 
