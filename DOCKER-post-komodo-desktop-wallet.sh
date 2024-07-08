@@ -30,7 +30,7 @@ apt-get install build-essential \
                     libgstreamer-plugins-base1.0-dev \
                     git libnss3 libxcomposite1 libxrandr2 libxcursor1 libxi6 libxtst6 libasound2 librange-v3-dev \
 		    python3-pip python cmake zip build-essential libboost-system-dev libboost-thread-dev libboost-program-options-dev libboost-test-dev \
-      		    aptitude apt-file qtbase5-dev qtdeclarative5-dev qttools5-dev libqt5*dev -y
+      		    aptitude apt-file qtbase5-dev qtdeclarative5-dev qttools5-dev libqt5*dev qttools5-dev-tools qtwebengine5-dev libqt5websockets5-dev libqt5svg5 libqt5svg5-dev libuchardet-dev -y
 
 git clone https://github.com/KomodoPlatform/komodo-wallet-desktop && cd komodo-wallet-desktop &&  git submodule init &&  git submodule sync --recursive &&  git submodule update --init --recursive
 
