@@ -127,16 +127,13 @@ echo ''
 echo 'binary should be in bin/AntaraAtomicDexAppDir/usr/bin/komodo-wallet should copy to the host with cp -rf ./bin/AntaraAtomicDexAppDir/usr/bin/komodo-wallet /usr/bin/'
 echo ''
 echo 'building for an appimage must be done on the host or with PID1 in docker running'
-DESTDIR=AppDir cmake .. -DCMAKE_INSTALL_PREFIX=/usr -DBUILD_SHARED_LIBS=ON -DCMAKE_BUILD_TYPE=Release ../ 
+cmake .. -DCMAKE_INSTALL_PREFIX=./AppDir -DBUILD_SHARED_LIBS=ON -DCMAKE_BUILD_TYPE=Release ../ 
 
-#DESTDIR=AppDir cmake  -DCMAKE_INSTALL_PREFIX=/usr -DBUILD_SHARED_LIBS=ON -DCMAKE_BUILD_TYPE=Release -GNinja ../
+cmake --build . --config Release --target komodo-wallet
 
-DESTDIR=AppDir cmake --build . --config Release --target komodo-wallet
-
-DESTDIR=AppDir ninja -j24 install 
 
 wget https://github.com/linuxdeploy/linuxdeploy/releases/download/1-alpha-20240109-1/linuxdeploy-x86_64.AppImage
 chmod +x linuxdeploy-x86_64.AppImage
-./linuxdeploy-x86_64.AppImage --appdir AppDir/ --output appimage --icon-filename --desktop-file myprogram.desktop --icon-file icon
+./linuxdeploy-x86_64.AppImage --appdir ./AppDir/ --output appimage --icon-filename --desktop-file myprogram.desktop --icon-file icon
 
 
