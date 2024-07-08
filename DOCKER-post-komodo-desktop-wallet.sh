@@ -133,7 +133,8 @@ cmake  -DCMAKE_INSTALL_PREFIX=/usr -DBUILD_SHARED_LIBS=ON -DCMAKE_BUILD_TYPE=Rel
 
 cmake --build . --config Release --target komodo-wallet
 
-make -j24 install DESTDIR=AppDir
+ninja -j24 install DESTDIR=AppDir
+
 wget https://github.com/linuxdeploy/linuxdeploy/releases/download/1-alpha-20240109-1/linuxdeploy-x86_64.AppImage
 chmod +x linuxdeploy-x86_64.AppImage
 ./linuxdeploy-x86_64.AppImage --appdir AppDir/ --output appimage --icon-filename --desktop-file myprogram.desktop --icon-file icon
