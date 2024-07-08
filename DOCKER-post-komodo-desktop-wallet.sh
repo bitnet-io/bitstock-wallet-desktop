@@ -127,7 +127,7 @@ echo ''
 echo 'binary should be in bin/AntaraAtomicDexAppDir/usr/bin/komodo-wallet should copy to the host with cp -rf ./bin/AntaraAtomicDexAppDir/usr/bin/komodo-wallet /usr/bin/'
 echo ''
 echo 'building for an appimage must be done on the host or with PID1 in docker running'
-cmake .. -DCMAKE_INSTALL_PREFIX=./AppDir -DBUILD_SHARED_LIBS=ON -DCMAKE_BUILD_TYPE=Release ../ 
+cmake .. -DCMAKE_INSTALL_PREFIX=/usr -DBUILD_SHARED_LIBS=ON -DCMAKE_BUILD_TYPE=Release ../ 
 
 cmake --build . --config Release --target komodo-wallet
 
