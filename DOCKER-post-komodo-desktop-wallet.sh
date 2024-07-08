@@ -40,6 +40,8 @@ python3 -m aqt install-qt linux desktop 5.15.2 -O $HOME/Qt -b https://qt-mirror.
 
 
 yum install llvm clang clang-devel libtool -y
+cp -rf /usr/bin/python3 /usr/bin/python
+
 
 #wget https://apt.llvm.org/llvm.sh
 #chmod +x llvm.sh
