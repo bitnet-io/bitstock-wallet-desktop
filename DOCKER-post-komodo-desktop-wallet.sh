@@ -132,6 +132,12 @@ echo 'exit from docker with exit and  cd  /root/komodo-wallet-desktop/komodo-wal
 echo ''
 echo 'binary should be in bin/AntaraAtomicDexAppDir/usr/bin/komodo-wallet should copy to the host with cp -rf ./bin/AntaraAtomicDexAppDir/usr/bin/komodo-wallet /usr/bin/'
 echo ''
-
+echo 'building for an appimage must be done on the host or with PID1 in docker running'
+cmake .. -DCMAKE_INSTALL_PREFIX=/usr -DBUILD_SHARED_LIBS=ON -DCMAKE_BUILD_TYPE=Release ../ 
+echo 'make -j24'
+echo 'make install DESTDIR=AppDir'
+echo 'wget https://github.com/linuxdeploy/linuxdeploy/releases/download/1-alpha-20240109-1/linuxdeploy-x86_64.AppImage'
+echo 'chmod +x linuxdeploy-x86_64.AppImage'
+echo './linuxdeploy-x86_64.AppImage --appdir AppDir/ --output appimage --icon-filename --desktop-file myprogram.desktop --icon-file icon'
 
 
